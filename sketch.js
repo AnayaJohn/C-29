@@ -10,6 +10,8 @@ var bird, slingShot;
 
 function preload() {
     backgroundImg = loadImage("sprites/bg.png");
+    sling1=loadImage("sprites/sling1.png");
+    sling2=loadImage("sprites/sling2.png");
 }
 
 function setup(){
@@ -36,10 +38,10 @@ function setup(){
     log4 = new Log(760,120,150, PI/7);
     log5 = new Log(870,120,150, -PI/7);
 
-    bird = new Bird(100,100);
+    bird = new Bird(200,50);
 
     //log6 = new Log(230,180,80, PI/2);
-    slingshot = new SlingShot(bird.body,{x:200, y:100});
+    slingshot = new SlingShot(bird.body,{x:200, y:50});
 }
 
 function draw(){
@@ -61,10 +63,13 @@ function draw(){
     log4.display();
     log5.display();
 
-    bird.display();
     platform.display();
     //log6.display();
-    slingshot.display();    
+    slingshot.display(); 
+    
+    image(sling1,200,20);
+    bird.display();
+    image(sling2,170,20);
 }
 
 function mouseDragged(){
